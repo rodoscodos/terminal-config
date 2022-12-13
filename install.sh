@@ -3,6 +3,8 @@ if [[ $($OSdetect) == *"Darwin"* ]]; then
 	echo "--- Installing for mac ---"
 	echo "--- Installing Brew ---"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	echo "--- Installing ZSH ---"
+	brew install zsh
 	echo "--- Installing oh-my-zsh ---"
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	echo "--- Installing iTerm2 ---"
@@ -19,6 +21,8 @@ if [[ $($OSdetect) == *"Darwin"* ]]; then
 	rm -r terminal-config
 else
 	echo "--- Installing for Linux ---"
+	echo "--- Installing ZSH ---"
+	apt install -y zsh
         echo "--- Installing oh-my-zsh ---"
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo "--- Installing GIT ---"
