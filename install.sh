@@ -22,11 +22,11 @@ if [[ $($OSdetect) == *"Darwin"* ]]; then
 else
 	echo "--- Installing for Linux ---"
 	echo "--- Installing ZSH ---"
-	apt install -y zsh
+	sudo apt install -y zsh
         echo "--- Installing oh-my-zsh ---"
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo "--- Installing GIT ---"
-	apt install -y git
+	sudo apt install -y git
 	echo "--- Downloading repo ---"
 	git clone https://github.com/rodoscodos/terminal-config.git
 	cd terminal-config
