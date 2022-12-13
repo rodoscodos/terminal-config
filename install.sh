@@ -11,8 +11,12 @@ if [[ $($OSdetect) == *"Darwin"* ]]; then
 	brew install git
 	echo "--- Downloading repo ---"
         git clone https://github.com/rodoscodos/terminal-config.git
+	cd terminal-config
 	echo "--- Installing tmux-config ---"
 	./tmux-config/install.sh
+	echo "--- Cleaning up ---"
+	cd ..
+	rm -r terminal-config
 else
 	echo "--- Installing for Linux ---"
         echo "--- Installing oh-my-zsh ---"
@@ -24,5 +28,8 @@ else
 	cd terminal-config
 	echo "--- Installing tmux-config ---"
         ./tmux-config/install.sh
-
+	echo "--- Cleaning up ---"
+	cd ..
+	rm -r terminal-config
+	
 fi
