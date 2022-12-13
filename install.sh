@@ -6,7 +6,7 @@ if [[ $($OSdetect) == *"Darwin"* ]]; then
 	echo "--- Installing oh-my-zsh ---"
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	echo "--- Installing tmux-config ---"
-	./packages/tmux-config/install.sh
+	./tmux-config/install.sh
 	echo "--- Installing iTerm2 ---"
 	brew install iterm2
 else
@@ -14,6 +14,6 @@ else
         echo "--- Installing oh-my-zsh ---"
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo "--- Installing tmux-config ---"
-        ./packages/tmux-config/install.sh
+        ./tmux-config/install.sh
 
 fi
