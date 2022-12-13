@@ -5,15 +5,24 @@ if [[ $($OSdetect) == *"Darwin"* ]]; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	echo "--- Installing oh-my-zsh ---"
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	echo "--- Installing tmux-config ---"
-	./tmux-config/install.sh
 	echo "--- Installing iTerm2 ---"
 	brew install iterm2
+	echo "--- Installing GIT ---"
+	brew install git
+	echo "--- Downloading repo ---"
+        git clone https://github.com/rodoscodos/terminal-config.git
+	echo "--- Installing tmux-config ---"
+	./tmux-config/install.sh
 else
 	echo "--- Installing for Linux ---"
         echo "--- Installing oh-my-zsh ---"
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        echo "--- Installing tmux-config ---"
+        echo "--- Installing GIT ---"
+	apt install -y git
+	echo "--- Downloading repo ---"
+	git clone https://github.com/rodoscodos/terminal-config.git
+	cd terminal-config
+	echo "--- Installing tmux-config ---"
         ./tmux-config/install.sh
 
 fi
